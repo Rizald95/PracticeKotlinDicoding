@@ -62,6 +62,29 @@ class Bird: IFly {
 }
 
 
+/*
+* FUNCTION (SAM) INTERFACE
+* menggunakan function interface atau disebut single Abstract Method
+* asalah sebuah interface yang memiliki satu method abstract*/
+
+fun interface  IFly1 {
+    fun fly()
+}
+
+//contoh kode ketika menggunakan keyword object dan override fungsi seperti ini:
+flyWithWings(object : IFly {
+    override fun fly() {
+        println()
+    }
+})
+
+//dengan memanfaatkan Kotlin SAM conversion
+flyWithWings {
+    println("the bord flying")
+}
+/*
+* catatan cara ini hanya bisa dilakukan pada interface yang hanya
+* memiliki satu fungsi aja, sesuai dengan namanya yankni SAM(Single abstract method)*/
 
 fun main() {
     CentralLibrary.borrowBookById(21) // singleton
